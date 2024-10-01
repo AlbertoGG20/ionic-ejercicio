@@ -1,3 +1,4 @@
+const { where } = require('sequelize');
 const db = require('../models');
 const Car = db.cars;
 const Op = db.Sequelize.Op;
@@ -20,10 +21,9 @@ exports.create = (req, res) => {
   };
 
   // Save Car in the database
-  Car.create(car)
-    .then(data => {
-      res.send(data);
-    })
+  Car.create(car).then(data => {
+    res.send(data);
+  })
     .catch(err => {
       res.status(500).send({
         message:
@@ -34,10 +34,9 @@ exports.create = (req, res) => {
 
 // Retrieve all Cars from the database.
 exports.findAll = (req, res) => {
-  Car.findAll()
-    .then(data => {
-      res.send(data);
-    })
+  Car.findAll().then(data => {
+    res.send(data);
+  })
     .catch(err => {
       res.status(500).send({
         message:
@@ -54,5 +53,12 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  // lógica para eliminar un coche por id
+  const id = req.params.id;
+
+  Car.destroy({ where: { id: id } }).then(() => {
+    console.log('Deleted id=${id}');
+    res.send({
+      message: "Se borro correctamente"
+    });
+  })
 };

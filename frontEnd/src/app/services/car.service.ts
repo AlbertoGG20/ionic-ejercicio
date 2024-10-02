@@ -14,7 +14,7 @@ export class CarService {
     return this.httpClient.get(this.endPoint);
   }
 
-  deleteDarta(id: string) {
+  deleteCar(id: string) {
     return this.httpClient.delete(`${this.endPoint}/${id}`);
   }
 
@@ -30,4 +30,13 @@ export class CarService {
     return this.httpClient.post(this.endPoint, body.toString(), { headers });
   }
 
+  update(id: any, data: any) {
+    /* return this.httpClient.put(`${this.endPoint}/${id}`, data); */
+    alert(id + " " + data.brand + " " + data.model);
+
+  }
+
+  updateCar(id: any, data: any) {
+    //completar
+  }
 }

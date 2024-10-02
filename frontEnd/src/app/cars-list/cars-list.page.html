@@ -1,13 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" collapse="fade">
   <ion-toolbar>
     <ion-title>cars-list</ion-title>
+    <ion-button expand="block" (click)="gotoCarsForm()" style="width: fit-content;">Crear coche</ion-button>
+    <ion-button expand="block" (click)="gotoCarsHome()" style="width: fit-content;">Home</ion-button>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<!-- <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">cars-list</ion-title>
     </ion-toolbar>
   </ion-header>
+</ion-content> -->
+
+<ion-content class="ion-padding">
+  <h1>Listado de los coches</h1>
+  <ion-list>
+    <ion-item style="max-width: 400px" *ngFor="let c of cars">
+      <ion-label color="dark">
+        <h2>{{c.brand}}</h2>
+        <p>{{c.model}}</p>
+      </ion-label>
+      <ion-button (click)="deleteCar(c.id)" color="danger">Borrar</ion-button>
+      <ion-button (click)="updateCar(c.id, c)" color="warning">Actualizar</ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>

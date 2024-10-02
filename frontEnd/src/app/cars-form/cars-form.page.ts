@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from '../services/car.service';
-import { Validator } from '@angular/forms';
+import { getElement } from 'ionicons/dist/types/stencil-public-runtime';
+
 
 @Component({
   selector: 'app-cars-form',
@@ -36,7 +37,24 @@ export class CarsFormPage implements OnInit {
     }
   }
 
+
+  updateValue(id: any, data: any) {
+    console.log(id + "" + data);
+  }
+
+
   getFormControl(field: string) {
     return this.carForm.get(field);
+  }
+
+
+
+  //Redirections
+  gotoCarsHome() {
+    this.route.navigateByUrl('/');
+  }
+
+  gotoCarsList() {
+    this.route.navigateByUrl('/cars-list');
   }
 }

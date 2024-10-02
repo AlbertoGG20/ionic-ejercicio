@@ -24,9 +24,6 @@ db.sequelize.sync().then(() => {
   console.log('Drop and re-sync db.');
 }); */
 
-app.get("/", (req, res) => {
-  res.json({ message: 'Hello from the back end!' });
-});
 
 require("./routes/car.routes")(app);
 

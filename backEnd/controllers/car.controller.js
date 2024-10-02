@@ -6,7 +6,6 @@ const Op = db.Sequelize.Op;
 
 // Create and Save a new Car
 exports.create = (req, res) => {
-  // Validate request
   if (!req.body.brand) {
     res.status(400).send({
       message: "Content can not be empty!"
@@ -32,7 +31,7 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve all Cars from the database.
+//  All Cars from the database.
 exports.findAll = (req, res) => {
   Car.findAll().then(data => {
     res.send(data);
@@ -44,12 +43,9 @@ exports.findAll = (req, res) => {
       });
     });
 };
-exports.findOne = (req, res) => {
-  // lógica para recuperar un coche por id
-};
 
 exports.update = (req, res) => {
-  // lógica para actualizar un coche por id
+
 };
 
 exports.delete = (req, res) => {

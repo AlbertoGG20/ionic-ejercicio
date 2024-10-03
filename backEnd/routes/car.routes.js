@@ -10,6 +10,9 @@ module.exports = app => {
   // Retrieve all Cars
   router.get("/", cars.findAll);
 
+  // Retrieve one Cars
+  router.get("/:id", cars.findOne);
+
   // Update a Car with id
   router.put("/:id", cars.update);
 

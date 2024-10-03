@@ -44,9 +44,47 @@ exports.findAll = (req, res) => {
     });
 };
 
-exports.update = (req, res) => {
+exports.findOne = (req, res) => {
+  const id = req.params.id;
 
+  Car.findByPk(id).then(data => {
+    if (data) {
+      res.send(data);
+    } else {
+      res.status(404).send({
+        message: `Cannot find Car with id=${id}.`
+      });
+    }
+  })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Car with id=" + id
+      });
+    });
 };
+
+exports.update = (req, res) => {
+  const id = req.params.id;
+  Car.update(req.body, {
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.send({
+          message: "Car was updated successfully."
+        });
+      } else {
+        res.send({
+          message: `Cannot update Car with id=${id}. Maybe Car was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Error retrieving Car with id=" + id
+      });
+    });
+}
 
 exports.delete = (req, res) => {
   const id = req.params.id;

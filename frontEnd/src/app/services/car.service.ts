@@ -7,11 +7,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class CarService {
 
   endPoint: string = 'http://localhost:8080/api/cars';
+  dataId: any = 0;
 
   constructor(private httpClient: HttpClient) { }
 
   getCars() {
     return this.httpClient.get(this.endPoint);
+  }
+
+  getOneCar(id: any) {
+    return this.httpClient.get(`${this.endPoint}/${id}`);
   }
 
   deleteCar(id: string) {
@@ -30,9 +35,9 @@ export class CarService {
     return this.httpClient.post(this.endPoint, body.toString(), { headers });
   }
 
-  update(id: any, data: any) {
+  update(id: any) {
     /* return this.httpClient.put(`${this.endPoint}/${id}`, data); */
-    alert(id + " " + data.brand + " " + data.model);
+    this.dataId = id;
 
   }
 

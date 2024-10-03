@@ -3,6 +3,7 @@
     <ion-title class="ion-text-center" color="dark">Lista de Coches</ion-title>
   </ion-toolbar>
 </ion-header>
+
 <ion-content class="ion-padding">
   <div class="disp-flex">
     <ion-button expand="block" (click)="gotoCarsForm()">Crear coche</ion-button>
@@ -10,13 +11,15 @@
   </div>
   <h1>Listado de los coches</h1>
   <ion-list>
-    <ion-item *ngFor="let c of cars">
-      <ion-label color="dark">
-        <h2>{{c.brand}}</h2>
-        <p>{{c.model}}</p>
-      </ion-label>
-      <ion-button (click)="deleteCar(c.id)" color="danger">Borrar</ion-button>
-      <ion-button (click)="openModal()" color="warning">Actualizar</ion-button>
-    </ion-item>
+    <div class="container">
+      <ion-item *ngFor="let c of cars">
+        <ion-label color="dark">
+          <h2>{{c.brand}}</h2>
+          <p>{{c.model}}</p>
+        </ion-label>
+        <ion-button (click)="deleteCar(c.id)" color="danger">Borrar</ion-button>
+        <ion-button (click)="openModal(c)" color="warning">Actualizar</ion-button>
+      </ion-item>
+    </div>
   </ion-list>
 </ion-content>

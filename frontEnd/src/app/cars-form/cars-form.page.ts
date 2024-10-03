@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CarService } from '../services/car.service';
-import { getElement } from 'ionicons/dist/types/stencil-public-runtime';
 
 
 @Component({

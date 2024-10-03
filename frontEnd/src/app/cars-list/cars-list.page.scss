@@ -1,4 +1,5 @@
-.disp-flex {
+.container {
   display: flex;
-  background-color: aqua;
+  flex-direction: column;
+  max-width: 500px;
 }

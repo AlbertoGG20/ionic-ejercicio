@@ -21,7 +21,8 @@ export class CarsListPage implements OnInit {
     this.getCars();
   }
 
-  async openModal() {
+  async openModal(id: any) {
+    this.carService.update(id)
     const modal = await this.modalCtr.create({
       component: ModalComponent,
     });
@@ -47,7 +48,7 @@ export class CarsListPage implements OnInit {
   }
 
   updateCar(id: any, data: any) {
-    this.carService.update(id, data)/* .subscribe(() => {
+    this.carService.update(id)/* .subscribe(() => {
       this.getCars();
     }) */
   }

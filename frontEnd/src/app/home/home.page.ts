@@ -18,4 +18,8 @@ export class HomePage {
     this.router.navigateByUrl('/cars-list');
   }
 
+  gotoCarsHome() {
+    this.router.navigateByUrl('/');
+  };
+
 }

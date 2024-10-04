@@ -21,17 +21,18 @@ export class CarsListPage implements OnInit {
     this.getCars();
   }
 
-  async openModal(id: any) {
-    this.carService.update(id)
+  async openModal(car: any) {
+
     const modal = await this.modalCtr.create({
       component: ModalComponent,
+      componentProps: { car },
     });
     modal.present();
 
     const { data, role } = await modal.onWillDismiss();
 
-    if (role === 'confirm') {
-      this.message = `Hello, ${data}!`;
+    if (role === 'confirm' && data) {
+      this.updateCar(car.id, data);
     }
   }
 
@@ -48,9 +49,9 @@ export class CarsListPage implements OnInit {
   }
 
   updateCar(id: any, data: any) {
-    this.carService.update(id)/* .subscribe(() => {
+    this.carService.update(id, data).subscribe(() => {
       this.getCars();
-    }) */
+    })
   }
 
 
@@ -61,5 +62,9 @@ export class CarsListPage implements OnInit {
   gotoCarsHome() {
     this.router.navigateByUrl('/');
   };
+
+  gotoCarsList() {
+    this.router.navigateByUrl('/cars-list');
+  }
 
 }

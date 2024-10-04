@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CarService } from 'src/app/services/car.service';
 import { ModalController } from '@ionic/angular';
 
@@ -8,13 +8,22 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent {
-  id: any = this.carService.dataId
-  brand: string = this.id.model;
-  model: string = this.id.model;
+  @Input() car: any;
 
 
-  constructor(private modalCtrl: ModalController, private carService: CarService) { }
+  brand: string = "";
+  model: string = "";
 
+
+  constructor(private modalCtrl: ModalController) { }
+
+  ngOnInit() {
+    // Inicializa los valores del formulario con los datos del auto recibido
+    if (this.car) {
+      this.brand = this.car.brand;
+      this.model = this.car.model;
+    }
+  }
 
 
   cancel() {
@@ -22,8 +31,13 @@ export class ModalComponent {
   }
 
   confirm() {
-    return this.modalCtrl.dismiss(this.brand, 'confirm');
+    const updatedCar = {
+      ...this.car, // Mantén el resto de los datos del auto (por ejemplo, id)
+      brand: this.brand,
+      model: this.model,
+    };
+
+    return this.modalCtrl.dismiss(updatedCar, 'confirm');
+
   }
-
 }
-

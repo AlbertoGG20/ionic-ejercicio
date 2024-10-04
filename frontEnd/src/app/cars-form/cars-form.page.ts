@@ -56,4 +56,8 @@ export class CarsFormPage implements OnInit {
   gotoCarsList() {
     this.route.navigateByUrl('/cars-list');
   }
+
+  gotoCarsForm() {
+    this.route.navigateByUrl('/cars-form');
+  }
 }

@@ -1,24 +1,45 @@
 <ion-header [translucent]="true" collapse="fade">
   <ion-toolbar>
-    <ion-title class="ion-text-center" color="dark">Lista de Coches</ion-title>
+    <ion-title class="ion-text-center" color="carapp">CarZone</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <div class="disp-flex">
-    <ion-button expand="block" (click)="gotoCarsForm()">Crear coche</ion-button>
     <ion-button expand="block" (click)="gotoCarsHome()">Home</ion-button>
+    <ion-button expand="block" (click)="gotoCarsForm()">Crear coche</ion-button>
+    <ion-button expand="block" (click)="gotoCarsList()">Ver coches</ion-button>
   </div>
+
   <h1>Listado de los coches</h1>
   <ion-list>
     <div class="container">
       <ion-item *ngFor="let c of cars">
-        <ion-label color="dark">
-          <h2>{{c.brand}}</h2>
-          <p>{{c.model}}</p>
-        </ion-label>
-        <ion-button (click)="deleteCar(c.id)" color="danger">Borrar</ion-button>
-        <ion-button (click)="openModal(c)" color="warning">Actualizar</ion-button>
+        <div class="list-container">
+          <div class="button-disp-flex">
+            <ion-button (click)="deleteCar(c.id)" color="delete" [strong]="true">Eliminar</ion-button>
+            <ion-button (click)="openModal(c)" color="update " [strong]="true">Actualizar</ion-button>
+          </div>
+          <div class="list-info">
+            <ion-label color="dark">
+              <h2>Marca</h2>
+              <p>Modelo</p>
+              <p>Año</p>
+              <p>Motor</p>
+              <p>Puertas</p>
+              <p>Combustible</p>
+            </ion-label>
+            <ion-label color="dark">
+              <h2>{{c.brand}}</h2>
+              <p>{{c.model}}</p>
+              <p>{{c.model}}</p>
+              <p>{{c.model}}</p>
+              <p>{{c.model}}</p>
+              <p>{{c.model}}</p>
+            </ion-label>
+          </div>
+        </div>
+
       </ion-item>
     </div>
   </ion-list>

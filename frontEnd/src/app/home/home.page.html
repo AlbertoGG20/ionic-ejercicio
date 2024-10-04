@@ -1,13 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="ion-text-center" color="dark">
-      Home
+    <ion-title class="ion-text-center" color="carapp">
+      CarZone
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
   <div class="disp-flex">
+    <ion-button expand="block" (click)="gotoCarsHome()">Home</ion-button>
     <ion-button expand="block" (click)="gotoCarsForm()">Crear coche</ion-button>
     <ion-button expand="block" (click)="gotoCarsList()">Ver los coches</ion-button>
   </div>

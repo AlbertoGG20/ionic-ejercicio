@@ -35,13 +35,11 @@ export class CarService {
     return this.httpClient.post(this.endPoint, body.toString(), { headers });
   }
 
-  update(id: any) {
-    /* return this.httpClient.put(`${this.endPoint}/${id}`, data); */
-    this.dataId = id;
+  update(id: any, data: any) {
+    /*     console.log(id);
+        console.log(data.model + " " + data.brand); */
+    return this.httpClient.put(`${this.endPoint}/${id}`, data);
 
-  }
 
-  updateCar(id: any, data: any) {
-    //completar
   }
 }

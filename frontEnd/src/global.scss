@@ -39,4 +39,69 @@
 
 .disp-flex {
   display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+.container {
+  padding-top: 1rem;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+h1 {
+  padding-top: 2rem;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.list-container {
+  width: 550px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 3rem;
+  align-items: start;
+  padding: 1rem 0;
+}
+
+.list-info {
+  display: flex;
+  gap: 3rem;
+}
+
+.button-disp-flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: fit-content;
+  height: fit-content;
+  margin: 0 auto;
+}
+
+@media screen and (width <=600px) {
+  .button-disp-flex {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: end;
+    width: 100%;
+    height: fit-content;
+    margin: 0 0;
+  }
+
+  .container {
+    width: auto;
+  }
+
+  .list-container {
+    padding: 2rem 0;
+    flex-direction: column-reverse;
+    gap: 2rem;
+    justify-content: start;
+  }
+
 }

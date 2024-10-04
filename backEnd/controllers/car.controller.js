@@ -16,7 +16,10 @@ exports.create = (req, res) => {
   // Create a Car
   const car = {
     brand: req.body.brand,
-    model: req.body.model
+    model: req.body.model,
+    fuel: req.body.fuel,
+    year: req.body.year,
+    hs: req.body.hs,
   };
 
   // Save Car in the database

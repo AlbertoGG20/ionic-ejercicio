@@ -60,3 +60,10 @@ span {
   font-size: larger;
   font-weight: 600;
 }
+
+@media screen and (width <=600px) {
+
+  .images {
+    flex-direction: column;
+  }
+}

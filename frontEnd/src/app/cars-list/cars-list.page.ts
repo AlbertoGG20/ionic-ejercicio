@@ -10,7 +10,7 @@ import { ModalComponent } from './modal/modal.component';
   styleUrls: ['./cars-list.page.scss'],
 })
 export class CarsListPage implements OnInit {
-  message = "prueba de las pruebas";
+  message = "";
   cars: any = [];
 
 
@@ -18,9 +18,11 @@ export class CarsListPage implements OnInit {
   constructor(private carService: CarService, private router: Router, private modalCtr: ModalController) { }
 
   ngOnInit() {
-    this.getCars();
   }
 
+  ionViewWillEnter() {
+    this.getCars();
+  }
   async openModal(car: any) {
 
     const modal = await this.modalCtr.create({

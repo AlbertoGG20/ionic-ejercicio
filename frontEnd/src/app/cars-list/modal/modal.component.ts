@@ -41,6 +41,9 @@ export class ModalComponent {
       ...this.car, // Mantén el resto de los datos del auto (por ejemplo, id)
       brand: this.brand,
       model: this.model,
+      fuel: this.fuel,
+      year: this.year,
+      hs: this.hs,
     };
 
     return this.modalCtrl.dismiss(updatedCar, 'confirm');

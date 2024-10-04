@@ -20,6 +20,9 @@ export class CarsFormPage implements OnInit {
     this.carForm = this.formBuilder.group({
       brand: ['', Validators.compose([Validators.required])],
       model: ['', Validators.compose([Validators.required])],
+      fuel: ['', Validators.compose([Validators.required])],
+      year: ['', Validators.compose([Validators.required])],
+      hs: ['', Validators.compose([Validators.required])],
     });
   }
 

@@ -13,29 +13,12 @@ export class CarsListPage implements OnInit {
   message = "";
   cars: any = [];
 
-
-
   constructor(private carService: CarService, private router: Router, private modalCtr: ModalController) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   ionViewWillEnter() {
     this.getCars();
-  }
-  async openModal(car: any) {
-
-    const modal = await this.modalCtr.create({
-      component: ModalComponent,
-      componentProps: { car },
-    });
-    modal.present();
-
-    const { data, role } = await modal.onWillDismiss();
-
-    if (role === 'confirm' && data) {
-      this.updateCar(car.id, data);
-    }
   }
 
   getCars() {
@@ -57,6 +40,7 @@ export class CarsListPage implements OnInit {
   }
 
 
+  //Redirections
   gotoCarsForm() {
     this.router.navigateByUrl('/cars-form');
   };
@@ -68,5 +52,21 @@ export class CarsListPage implements OnInit {
   gotoCarsList() {
     this.router.navigateByUrl('/cars-list');
   }
+
+  //modal menu
+  async openModal(car: any) {
+    const modal = await this.modalCtr.create({
+      component: ModalComponent,
+      componentProps: { car },
+    });
+    modal.present();
+
+    const { data, role } = await modal.onWillDismiss();
+
+    if (role === 'confirm' && data) {
+      this.updateCar(car.id, data);
+    }
+  }
+
 
 }

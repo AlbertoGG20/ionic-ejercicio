@@ -27,20 +27,16 @@ export class CarService {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });
-
     const body = new URLSearchParams();
     body.append('brand', data.brand);
     body.append('model', data.model);
     body.append('fuel', data.fuel);
     body.append('year', data.year);
     body.append('hs', data.hs);
-
     return this.httpClient.post(this.endPoint, body.toString(), { headers });
   }
 
   update(id: any, data: any) {
     return this.httpClient.put(`${this.endPoint}/${id}`, data);
-
-
   }
 }

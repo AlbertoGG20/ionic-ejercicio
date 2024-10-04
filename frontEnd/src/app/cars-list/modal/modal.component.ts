@@ -10,7 +10,6 @@ import { ModalController } from '@ionic/angular';
 export class ModalComponent {
   @Input() car: any;
 
-
   brand: string = "";
   model: string = "";
   fuel: string = "";
@@ -25,12 +24,11 @@ export class ModalComponent {
     if (this.car) {
       this.brand = this.car.brand;
       this.model = this.car.model;
-      this.fuel = this.car.model;
-      this.year = this.car.model;
-      this.hs = this.car.model;
+      this.fuel = this.car.fuel;
+      this.year = this.car.year;
+      this.hs = this.car.hs;
     }
   }
-
 
   cancel() {
     return this.modalCtrl.dismiss(null, 'cancel');
@@ -45,8 +43,6 @@ export class ModalComponent {
       year: this.year,
       hs: this.hs,
     };
-
     return this.modalCtrl.dismiss(updatedCar, 'confirm');
-
   }
 }

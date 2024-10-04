@@ -1,42 +1,29 @@
 # Car Zone
 
-One Paragraph of project description goes here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+Project about car information, including its brand, model, year, ..., created using Ionic, Angular, Sequelize, MySQL, and Express.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+You need to have VSCode, MySQL installed, Postman, and MySQL Workbench.
 
-```
-Give examples
-```
+## Getting Started
 
-### Break down into end to end tests
+You need to clone the project from VSCode using the repository link. Once cloned, you need to install the modules for both the frontend and backend. After installation, start the backend with node index.js and the frontend with ionic serve.
 
-Explain what these tests test and why
 
-```
-Give an example
-```
+
+### PostMan Link
+
+* [PostMan](https://documenter.getpostman.com/view/38432262/2sAXxMfDXd) 
 
 ## Built With
 
-* [Ionic](http://www.dropwizard.io/1.0.2/docs/) 
-* [MySql](https://maven.apache.org/)
-* [Angular](https://rometools.github.io/rome/) 
-* [Node](https://rometools.github.io/rome/) 
-* [Express](https://rometools.github.io/rome/) 
+* [Ionic](https://ionicframework.com/) 
+* [MySql](https://www.mysql.com/)
+* [Angular](https://angular.dev/) 
+* [Node](https://nodejs.org/en) 
+* [Visual Studio Code](https://code.visualstudio.com/) 
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
 
 ## Authors
 

@@ -10,6 +10,7 @@ export class HomePage {
 
   constructor(private router: Router) { }
 
+  //Redirections
   gotoCarsForm() {
     this.router.navigateByUrl('/cars-form');
   }

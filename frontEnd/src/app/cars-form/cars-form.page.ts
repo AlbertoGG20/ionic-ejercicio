@@ -39,17 +39,9 @@ export class CarsFormPage implements OnInit {
     }
   }
 
-
-  updateValue(id: any, data: any) {
-    console.log(id + "" + data);
-  }
-
-
   getFormControl(field: string) {
     return this.carForm.get(field);
   }
-
-
 
   //Redirections
   gotoCarsHome() {

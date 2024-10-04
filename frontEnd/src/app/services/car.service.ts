@@ -31,6 +31,9 @@ export class CarService {
     const body = new URLSearchParams();
     body.append('brand', data.brand);
     body.append('model', data.model);
+    body.append('fuel', data.fuel);
+    body.append('year', data.year);
+    body.append('hs', data.hs);
 
     return this.httpClient.post(this.endPoint, body.toString(), { headers });
   }

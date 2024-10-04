@@ -13,6 +13,9 @@ export class ModalComponent {
 
   brand: string = "";
   model: string = "";
+  fuel: string = "";
+  year: string = "";
+  hs: string = "";
 
 
   constructor(private modalCtrl: ModalController) { }
@@ -22,6 +25,9 @@ export class ModalComponent {
     if (this.car) {
       this.brand = this.car.brand;
       this.model = this.car.model;
+      this.fuel = this.car.model;
+      this.year = this.car.model;
+      this.hs = this.car.model;
     }
   }
 

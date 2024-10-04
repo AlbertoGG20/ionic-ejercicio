@@ -29,6 +29,27 @@
         *ngIf="getFormControl('model')?.hasError('required') && getFormControl('model')?.touched">
         El modelo es obligatorio
       </ion-note>
+      <ion-item>
+        <ion-label position="floating">Combustible</ion-label>
+        <ion-input type="text" formControlName="fuel"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="getFormControl('fuel')?.hasError('required') && getFormControl('fuel')?.touched">
+        El Combustible es obligatorio
+      </ion-note>
+      <ion-item>
+        <ion-label position="floating">Año</ion-label>
+        <ion-input type="text" formControlName="year"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="getFormControl('year')?.hasError('required') && getFormControl('year')?.touched">
+        El Año es obligatorio
+      </ion-note>
+      <ion-item>
+        <ion-label position="floating">Fuerza</ion-label>
+        <ion-input type="text" formControlName="hs"></ion-input>
+      </ion-item>
+      <ion-note color="danger" *ngIf="getFormControl('hs')?.hasError('required') && getFormControl('hs')?.touched">
+        La Fuerza es obligatorio
+      </ion-note>
     </div>
 
     <ion-button color="carapp" type="submit" [disabled]="!carForm.valid">agregar coche</ion-button>

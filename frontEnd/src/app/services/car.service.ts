@@ -36,8 +36,6 @@ export class CarService {
   }
 
   update(id: any, data: any) {
-    /*     console.log(id);
-        console.log(data.model + " " + data.brand); */
     return this.httpClient.put(`${this.endPoint}/${id}`, data);
 
 
